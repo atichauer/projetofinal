@@ -301,15 +301,13 @@
                     return
                 }
                 $("#criarContrato").html("O número do contrato cadastrado é: " + resultado);
-            });
+            })
         }
         var frmRegistraLocatario = document.formRegistraLocatario;
         function registraLocatario() {
             event.preventDefault();
             $("#statusTransacao").html("&nbsp;");
-            contract.b_registraLocatario(frmRegistraLocatario.numeroDoContrato.value, frmRegistraLocatario.contaLocatario.value, 
-            frmRegistraLocatario.Locatario.value, 
-            frmRegistraLocatario.digidLocatario, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+            contract.b_registraLocatario(frmRegistraLocatario.numeroDoContrato.value, frmRegistraLocatario.contaLocatario.value, frmRegistraLocatario.Locatario.value, frmRegistraLocatario.digidLocatario, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
                 if (erro) {
                     console.log("registrarLocatario");
                     console.error(erro);
@@ -320,8 +318,8 @@
             })
         }
 
-        var valorLocacao = 0;
-        var valorGarantia = 0;
+        var valorLocacaof = 0;
+        var valorGarantiaf = 0;
         var formBuscarContrato = document.formBuscarContrato;
         function buscaContratoPorNumero() {
             event.preventDefault();
@@ -337,8 +335,8 @@
                 $("#resultadoPesquisa").html("Os dados deste contrato são: <br> Locador: " + resultado[0] + "<br> ID Digital Locador: " + resultado[1] + "<br> Locatário: " + resultado[2] + 
                 "<br> ID Digital Locatário: " + resultado[3] + "<br> Endereço do Imóvel: " + resultado[4] + "<br> Valor da Locação: " + resultado[5] + "<br> Valor da Garantia: " + resultado[6] +
                 "<br> Data Inicial: " + resultado[7] + "<br> Data Final: " + resultado[8]);
-                valorLocacao = (resultado[5] * 1);
-                valorGarantia = (resultado[6] * 1);
+                valorLocacaof = (resultado[5] * 1);
+                valorGarantiaf = (resultado[6] * 1);
             })
         }
         
